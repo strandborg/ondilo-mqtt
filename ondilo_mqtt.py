@@ -81,7 +81,7 @@ class ICO_Device(Device_Base):
     def update_prop(self, data, prop):
         if(data["is_valid"]):
             valueTime = parser.parse(data["value_time"])
-            if(prop.valueTime < valueTime):
+            if(prop.valueTime < valueTime.astimezone(timezone.utc)):
                 prop.value = data["value"]
                 prop.valueTime = valueTime
 
