@@ -46,6 +46,7 @@ def get_ico_measurements():
 
     poolid = client.get_pools()[0]["id"]
     measures = client.get_last_pool_measures(poolid)
+#    print(measures)
     return {item['data_type']: item for item in measures}
 
 class ICO_Device(Device_Base):

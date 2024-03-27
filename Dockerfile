@@ -15,7 +15,7 @@ WORKDIR /app
 COPY ondilo_mqtt.py .
 
 # Install the libraries
-RUN pip install paho-mqtt==1.6.1 Homie4 ondilo python-dateutil
+RUN pip install "paho-mqtt>=1.6.1,<2.0" Homie4 ondilo>=0.4.0 python-dateutil
 
 # Run the Python script with environment variables
 CMD ["python", "ondilo_mqtt.py"]
